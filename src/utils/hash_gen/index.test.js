@@ -1,4 +1,4 @@
-import { genMD5, genSHA256, genTextWithoutHash } from './';
+import { genMD5, genSHA256, genTextWithoutHash, genBase64 } from './';
 
 describe('Must generate hash every entrance', () => {
   it('should return MD5 from value', () => {
@@ -26,6 +26,14 @@ describe('Must generate hash every entrance', () => {
     }
 
     expect(genTextWithoutHash(mock.text)).toEqual(mock.resp);
-  })
+  });
 
+  it('should return text from value', () => {
+    const mock = {
+      text: 'text',
+      resp: 'dGV4dA==',
+    }
+
+    expect(genBase64(mock.text)).toEqual(mock.resp);
+  });
 });
