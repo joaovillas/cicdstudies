@@ -11,8 +11,6 @@ branches:
   only: 
     - main
 
-if: type = pull_request OR type = push
-
 jobs: 
   include:
     - stage: 'building'
