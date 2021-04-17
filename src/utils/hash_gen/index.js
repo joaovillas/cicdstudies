@@ -8,3 +8,7 @@ export function genMD5(text) {
 export function genSHA256(text) {
   return SHA256(text).toString();
 }
+
+export function genTextWithoutHash(text) {
+  return text;
+}
